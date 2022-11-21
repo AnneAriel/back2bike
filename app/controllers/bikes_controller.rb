@@ -14,12 +14,13 @@ class BikesController < ApplicationController
 
   def create
   @bike = Bike.new(bike_params)
+  @bike.save
   end
 
   private
 
   def bike_params
-    params.require(:bike).permit(:description, :localisation, :type)
+    params.require(:bike).permit(:description, :localisation, :category, :daily_price)
   end
 
 end

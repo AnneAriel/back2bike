@@ -4,5 +4,5 @@ class Bike < ApplicationRecord
 
   # validates :localisation, presence: true
   validates :daily_price, presence: true
-  validates :type, presence: true
+  validates :category, presence: true
 end
