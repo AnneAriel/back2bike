@@ -1,0 +1,11 @@
+
+<h1> Your reservation </h1>
+
+<ul>
+  <li> from <%= @reservation.start_date%> to <%= @reservation.end_date%> </li>
+  <li> Your bike: <%= @reservation.bike.description %> </li>
+  <li> Total price: <%= @reservation.price %> </li>
+</ul>
+
+
+<%= link_to "Delete", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
