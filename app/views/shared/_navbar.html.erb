@@ -1,8 +1,8 @@
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+      <img src="https://cdn-icons-png.flaticon.com/512/130/130276.png" />
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,17 +11,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+           <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+          <li class="nav-item active">
+          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://ca.slack-edge.com/T02NE0241-U045K5VEPU6-6f3e8bfafc04-512" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+              <a class="dropdown-item" href="#"> Action</a>
+              <a class="dropdown-item" href="#"> Another action</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="#"> Log out </a>
             </div>
           </li>
           <!--li class="nav-item"-->
@@ -32,6 +32,6 @@
 </div>
 
 
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},
-  class: "dropdown-item" %>
 
+
+ <%# <%= link_to "My reservations", bike_reservations_path(@bike), class: "dropdown-item" %>
