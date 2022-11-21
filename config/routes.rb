@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  resources :bikes, only: %i[index show] do
+  resources :bikes, only: %i[index show new create] do
     resources :reservations, only: %i[index show new create]
   end
 
