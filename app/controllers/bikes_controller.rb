@@ -1,27 +1,25 @@
 class BikesController < ApplicationController
 
-def index
-  @bikes = Bike.all
-end
+  def index
+    @bikes = Bike.all
+  end
 
-def show
-@bike = Bike.find(params[:id])
-end
+  def show
+  @bike = Bike.find(params[:id])
+  end
 
-def new
-  @bike = Bike.new
-end
+  def new
+    @bike = Bike.new
+  end
 
-def create
-@bike = Bike.new(bike_params)
-end
+  def create
+  @bike = Bike.new(bike_params)
+  end
 
+  private
 
-
-private
-
-def bike_params
-  params.require(:bike).permit(:description, :localisation, :type)
-end
+  def bike_params
+    params.require(:bike).permit(:description, :localisation, :type)
+  end
 
 end
