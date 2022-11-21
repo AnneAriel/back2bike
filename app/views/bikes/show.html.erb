@@ -1,0 +1,13 @@
+<!-- app/views/restaurants/show.html.erb -->
+<h1><%= @bike.category %></h1>
+
+<p><%= @bike.description %></p>
+<p><%= @bike.daily_price %></p>
+
+
+<%= link_to "Book this bike", new_bike_reservation_path, %></li>
+
+<%= link_to "Delete",
+  bike_path(@bike),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
