@@ -18,21 +18,23 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bike_params)
+    @bike.user = current_user
     @bike.save
+    redirect_to bike_path(@bike)
     authorize @bike
   end
 
   def destroy
     @bike = Bike.find(params[:id])
-    @bike.destroy
     authorize @bike
-    redirect_to bikes_path, status: :see_other
+    @bike.destroy
+    redirect_to bikes_path
   end
 
   private
 
   def bike_params
-    params.require(:bike).permit(:description, :localisation, :category, :daily_price)
+    params.require(:bike).permit(:description, :localisation, :category, :daily_price, :photo)
   end
 
 end

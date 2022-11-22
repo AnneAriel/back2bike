@@ -1,9 +1,16 @@
 
 <h1><%= @bike.category %></h1>
 
-<p><%= @bike.description %></p>
-<p><%= @bike.daily_price %></p>
 
+<div class="container">
+  <div class="details m-3">
+    <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
+    <ul>
+    <li><p>Description: <%= @bike.description %></p></li>
+    <li><p>Daily_price: <%= @bike.daily_price %> € </p></li>
+    </ul>
+  </div>
+</div>
 
 <%= link_to "Book this bike", new_bike_reservation_path(@bike), style:"text-decoration:none" %>
 
