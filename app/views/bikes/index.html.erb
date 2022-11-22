@@ -10,3 +10,6 @@
     <li><%= bike.daily_price %></li>
   <%end%>
 </ul>
+
+
+<%= link_to "New Bike", new_bike_path if policy(Bike).new? %>
