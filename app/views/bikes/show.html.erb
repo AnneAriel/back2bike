@@ -5,7 +5,7 @@
 <p><%= @bike.daily_price %></p>
 
 
-<%= link_to "Book this bike", new_bike_reservation_path, %>
+<%= link_to "Book this bike", new_bike_reservation_path(@bike) %>
 
 <% if policy(@bike).destroy? %>
   <div class ="btn btn-primary">

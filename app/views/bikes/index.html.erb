@@ -8,8 +8,6 @@
     <li><%= bike.localisation %></li>
     <li><%= bike.category%></li>
     <li><%= bike.daily_price %></li>
+    <li><%= link_to "See the bike", bike_path(bike)%></li>
   <%end%>
 </ul>
-
-
-<%= link_to "New Bike", new_bike_path if policy(Bike).new? %>

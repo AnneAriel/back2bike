@@ -3,12 +3,14 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    authorize @reservation
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.bike = @bike
     @reservation.user = current_user
+    authorize @reservation
     if @reservation.save
       redirect_to bike_path(@bike)
     else
@@ -18,6 +20,13 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(@bike, current_user)
+    authorize @reservation
+  end
+
+
+  def index
+    @reservation = Reservation.all
+    @reservation = policy_scope(Reservation)
   end
 
   # def edit
@@ -30,6 +39,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(@bike, current_user)
     @reservation.destroy
     redirect_to bikes_path
+    authorize @reservation
   end
 
   private

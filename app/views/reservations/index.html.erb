@@ -1,0 +1,13 @@
+<h1>All reservations</h1>
+
+
+<ul>
+  <% @reservations.each do |reservation| %>
+    <li><%= reservation.user_id %></li>
+    <li><%= reservation.bike_id %></li>
+    <li><%= reservation.start_date%></li>
+    <li><%= reservation.end_date %></li>
+  <%end%>
+</ul>
+
+<%= link_to "Home", root_path %>
