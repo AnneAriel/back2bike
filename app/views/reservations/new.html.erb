@@ -3,6 +3,6 @@
 <%=simple_form_for [@bike, @reservation] do |f|%>
 <%= f.input :start_date %>
 <%= f.input :end_date %>
-<%= f.input :price %>
-<%= f.submit "Submit reservation", class: "btn btn-primary"%>
+<%#= f.label ? afficher le price%>
+<%= f.submit "Book bike", class: "btn btn-primary"%>
 <%end%>

@@ -4,9 +4,9 @@
 
 <ul>
   <% @bikes.each do |bike| %>
+    <li><%= bike.category%></li>
     <li><%= bike.description %></li>
     <li><%= bike.localisation %></li>
-    <li><%= bike.category%></li>
     <li><%= bike.daily_price %></li>
     <li><%= link_to "See the bike", bike_path(bike)%></li>
   <%end%>
