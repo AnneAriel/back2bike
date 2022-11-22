@@ -4,6 +4,7 @@
 # Examples:
 #
 # créer des users avec id et ajouter user_id dans les bikes
+require "open-uri"
 
 Bike.destroy_all
 User.destroy_all
@@ -13,11 +14,25 @@ user2 = User.create!(name: "Jean Louis", email: "jl@gmail.com", password: "toto1
 user3 = User.create!(name: "Nelbi", email: "nelbi@gmail.com", password: "toto123")
 user4 = User.create!(name: "Anne Ariel", email: "anne_ariel@gmail.com", password: "toto123")
 
-Bike.create!(category: "VTT", description: "whatever", localisation: "Paris 12", daily_price: 8, user: user1)
-Bike.create!(category: "Road bike", description: "this", localisation: "Paris 12", daily_price: 8, user: user1)
-Bike.create!(category: "Mountain bike", description: "that", localisation: "Paris 12", daily_price: 12, user: user1)
-Bike.create!(category: "Electric bike", description: "wgat", localisation: "Paris 12", daily_price: 8, user: user3)
-Bike.create!(category: "Electric bike", description: "last", localisation: "Paris 12", daily_price: 10, user: user4)
+Bike1 = Bike.create!(category: "VTT", description: "whatever", localisation: "Paris 12", daily_price: 8, user: user1)
+photo = URI.open("https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmlrZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+Bike1.photo.attach(io: photo, filename: "velo")
+
+Bike2 = Bike.create!(category: "Road bike", description: "this", localisation: "Paris 12", daily_price: 8, user: user1)
+photo = URI.open("https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmlrZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+Bike2.photo.attach(io: photo, filename: "velo")
+
+Bike3 = Bike.create!(category: "Mountain bike", description: "that", localisation: "Paris 12", daily_price: 12, user: user1)
+photo = URI.open("https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmlrZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+Bike3.photo.attach(io: photo, filename: "velo")
+
+Bike4 = Bike.create!(category: "Electric bike", description: "wgat", localisation: "Paris 12", daily_price: 8, user: user3)
+photo = URI.open("https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmlrZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+Bike4.photo.attach(io: photo, filename: "velo")
+
+Bike5 = Bike.create!(category: "Electric bike", description: "last", localisation: "Paris 12", daily_price: 10, user: user4)
+photo = URI.open("https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YmlrZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")
+Bike5.photo.attach(io: photo, filename: "velo")
 
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
