@@ -1,4 +1,4 @@
-<!-- app/views/restaurants/show.html.erb -->
+
 <h1><%= @bike.category %></h1>
 
 <p><%= @bike.description %></p>
@@ -7,7 +7,9 @@
 
 <%= link_to "Book this bike", new_bike_reservation_path(@bike) %></li>
 
-<%= link_to "Delete",
-  bike_path(@bike),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+
+<% if policy(@bike).destroy? %>
+  <div class ="btn btn-primary">
+    <%= link_to "Delete", bike_path(@bike),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  </div>
+<% end %>
