@@ -1,8 +1,8 @@
 <h1>New reservation</h1>
 
 <%=simple_form_for [@bike, @reservation] do |f|%>
-<%= f.input :start_date, as: :datepicker%>
-<%= f.input :end_date, as: :datepicker %>
+<%= f.input :start_date %>
+<%= f.input :end_date %>
 <%#= f.label ? afficher le price%>
 <%= f.submit "Book bike", class: "btn btn-primary"%>
 <%end%>
