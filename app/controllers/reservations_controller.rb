@@ -10,14 +10,14 @@ class ReservationsController < ApplicationController
     @reservation.bike = @bike
     @reservation.user = current_user
     if @reservation.save
-      redirect_to bike_path(@bike)
+      redirect_to bike_reservation_path(@bike, @reservation)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
-    @reservation = Reservation.find(@bike, current_user)
+    @reservation = Reservation.find(params[:id])
   end
 
   # def edit
@@ -39,7 +39,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date, :price)
+    params.require(:reservation).permit(:start_date, :end_date, :bike_id, :user_id)
   end
-
 end
