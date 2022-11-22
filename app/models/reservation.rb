@@ -4,7 +4,6 @@ class Reservation < ApplicationRecord
 
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :price, presence: true
 end
 
 # s'assurer que end_date > start_date (flatpickr dans librairie du wagon pour le form de la view)

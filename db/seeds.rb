@@ -5,8 +5,8 @@
 #
 # créer des users avec id et ajouter user_id dans les bikes
 
-User.destroy_all
 Bike.destroy_all
+User.destroy_all
 
 user1 = User.create!(name: "Cathy", email: "catherinecrozat@gmail.com", password: "toto123")
 user2 = User.create!(name: "Jean Louis", email: "jl@gmail.com", password: "toto123")

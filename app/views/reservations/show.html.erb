@@ -2,10 +2,10 @@
 <h1> Your reservation </h1>
 
 <ul>
-  <li> from <%= @reservation.start_date%> to <%= @reservation.end_date%> </li>
+  <li> From <%= @reservation.start_date%> to <%= @reservation.end_date%> </li>
   <li> Your bike: <%= @reservation.bike.description %> </li>
-  <li> Total price: <%= @reservation.price %> </li>
+  <li> Total price: <%= @reservation.price = ((@reservation.end_date - @reservation.start_date) * @reservation.bike.daily_price).to_i %> € </li>
 </ul>
 
 
-<%= link_to "Delete", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+<%= link_to "Delete", reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
