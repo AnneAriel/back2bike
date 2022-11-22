@@ -25,8 +25,8 @@ class BikesController < ApplicationController
   def destroy
     authorize @bike
     @bike = Bike.find(params[:id])
-    @bike.destrit
-    redirect_to restaurants_path, status: :see_other
+    @bike.destroy
+    redirect_to bikes_path, status: :see_other
   end
 
   private

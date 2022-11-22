@@ -8,4 +8,9 @@
 </ul>
 
 
-<%= link_to "Delete", reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+<% if policy(@reservation).destroy? %>
+  <div class ="btn btn-primary">
+    <%= link_to "Delete", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
+<% end %>
+
