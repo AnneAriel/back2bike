@@ -19,14 +19,16 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.find(@bike, current_user)
+    @reservation = Reservation.find(params[:id])
     authorize @reservation
   end
 
 
   def index
-    @reservation = Reservation.all
-    @reservation = policy_scope(Reservation)
+    #@reservations = Reservation.all
+    #@user = current_user
+    #@user_reservation = @user.reservations
+    @user_reservation = policy_scope(Reservation)
   end
 
   # def edit
@@ -51,4 +53,8 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(:start_date, :end_date, :bike_id, :user_id)
   end
+
+
+
+
 end
