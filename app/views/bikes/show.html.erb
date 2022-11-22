@@ -12,10 +12,10 @@
   </div>
 </div>
 
-<%= link_to "Book this bike", new_bike_reservation_path(@bike) %>
+<%= link_to "Book this bike", new_bike_reservation_path(@bike), style:"text-decoration:none" %>
 
 <% if policy(@bike).destroy? %>
-  <div >
-    <%= link_to "Delete", bike_path(@bike),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  <div>
+    <%= link_to "Delete", bike_path(@bike),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, style:"text-decoration:none"%>
   </div>
 <% end %>

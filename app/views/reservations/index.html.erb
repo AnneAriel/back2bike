@@ -2,11 +2,11 @@
 
 
 <ul>
-  <% @reservations.each do |reservation| %>
-    <li><%= reservation.user_id %></li>
-    <li><%= reservation.bike_id %></li>
-    <li><%= reservation.start_date%></li>
-    <li><%= reservation.end_date %></li>
+  <% @user_reservation.each do |reservation| %>
+    <li>User: <%= reservation.user.name %></li>
+    <li>Bike: <%= reservation.bike.category %></li>
+    <li>Start date: <%= reservation.start_date%></li>
+    <li>End date: <%= reservation.end_date %></li>
   <%end%>
 </ul>
 
