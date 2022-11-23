@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_bike, only: %i[new create show destroy]
+  before_action :set_bike, only: %i[new create show ]
 
   def new
     @reservation = Reservation.new
@@ -39,10 +39,11 @@ class ReservationsController < ApplicationController
   # end
 
   def destroy
-    @reservation = Reservation.find(@bike, current_user)
+     @reservation = Reservation.find(params[:id])
+     authorize @reservation
     @reservation.destroy
-    redirect_to bikes_path
-    authorize @reservation
+    redirect_to reservations_path, status: :see_other
+
   end
 
   private
