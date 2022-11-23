@@ -22,9 +22,8 @@ Bike2 = Bike.create!(category: "Electric cargo bike", description: "The Blix Pac
 photo = URI.open("https://cdn.shopify.com/s/files/1/0591/4424/1347/products/ebike_4_x750.jpg?v=1637571547")
 Bike2.photo.attach(io: photo, filename: "velo")
 
-
 Bike3 = Bike.create!(category: "Mountain bike", description: "Hiland Slycan has a high quality ultralight aluminum frame for riding and moving with ease,corrosion resistant and very easy to clean and maintain.Internal shift cable and brake hose routing can help your cables last longer by protecting them from any environment,reduce wind resistance for higher speed.", address: "Rue Vergniaud 75013 Paris", daily_price: 12, user: user2)
-photo = URI.open("https://images.bikesonline.com/assets/thumbL/AITPX26TRD13G1.jpg?tr=w-334,h-220")
+photo = URI.open("https://cdn.rosebikes.de/cms/cms.63299fea28ff65.54741827.png?im=Resize=(960)")
 Bike3.photo.attach(io: photo, filename: "velo")
 
 Bike4 = Bike.create!(category: "Tricycle Tandem", description: "A wonderfull family bike !", address: "8, Rue Tanger 75018 Paris", daily_price: 8, user: user3)
