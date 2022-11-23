@@ -1,23 +1,26 @@
-<h2>All reservations</h2>
+
 
 
 <div class="container mt-4 cards">
+<h2>All reservations</h2>
   <div class="row">
 
     <% @user_reservation.each do |reservation| %>
     <div class="col-sm-4">
-    <div class = "bike_card">
-        <div class="card rounded shadow mb-4 ml-2" >
+      <div class="card rounded-4 shadow mb-4 ml-2 p-3" >
+        <% if reservation.bike.photo.attached? %>
+          <%= cl_image_tag reservation.bike.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top" %>
+        <% end %>
+        <div>
           <h2>Bike: <%= reservation.bike.category %></h2>
           <h4>User: <%= reservation.user.name %></h4>
           <h5>Start date: <%= reservation.start_date%></h5>
           <h5>End date: <%= reservation.end_date %></h5>
+          <p>Total price: <%= reservation.price %> €</p>
         </div>
       </div>
     </div>
     <%end%>
   </div>
-</div>
-
-
 <%= link_to "Home", root_path, class:"btn btn-flat" %>
+</div>
