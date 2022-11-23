@@ -2,16 +2,25 @@
 <h1>Our bikes</h1>
 
 
-<ul>
-  <% @bikes.each do |bike| %>
-    <li><%= bike.category%></li>
-    <li><%= bike.description %></li>
-    <li><%= bike.address %></li>
-    <li><%= bike.daily_price %></li>
-    <li><%= link_to "See the bike", bike_path(bike)%></li>
-  <%end%>
-</ul>
-
+<div class="container mt-4 cards">
+  <div class="row">
+    <% @bikes.each do |bike| %>
+      <div class="col-sm-4">
+        <div class="card rounded shadow mb-4 ml-2" >
+          <% if bike.photo.attached? %>
+            <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top" %>
+          <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= bike.category%></h5>
+              <h6><%= bike.address %></h6>
+              <h5 class="card-trip-pricing"><%= bike.daily_price %> €</h5>
+              <%= link_to "See the bike", bike_path(bike)%>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 <%= link_to "Add a bike", new_bike_path %>
 
 
