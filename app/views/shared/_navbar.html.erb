@@ -1,9 +1,11 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://cdn-icons-png.flaticon.com/512/130/130276.png" />
-</a>
+
+      <%= link_to bikes_path, class:"navbar-brand" do %>
+          <img src="https://cdn-icons-png.flaticon.com/512/130/130276.png"/>
+        <% end %>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,8 +18,8 @@
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://ca.slack-edge.com/T02NE0241-U045K5VEPU6-6f3e8bfafc04-512" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <%= link_to "Book a bike",  bikes_path, class:"dropdown-item" %>
+              <a class="dropdown-item" href="#"></a>
+              <%= link_to "Find a bike",  bikes_path, class:"dropdown-item" %>
               <%= link_to "Create a bike",  new_bike_path, class:"dropdown-item" %>
               <%# if reservation.user == current_user %>
               <%= link_to "My reservations",  reservations_path, class:"dropdown-item" %>
