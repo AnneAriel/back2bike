@@ -1,16 +1,19 @@
 
-<h1> Your reservation </h1>
+<div class="container">
 
-<ul>
-  <h5> From <%= @reservation.start_date%> to <%= @reservation.end_date%> </h5>
-  <p> Your bike: <%= @reservation.bike.description %></p>
-  <p> Total price: <%= @reservation.price = ((@reservation.end_date - @reservation.start_date) * @reservation.bike.daily_price).to_i %> € </p>
-</ul>
+  <h1> Your reservation </h1>
 
-<%= link_to "List of bikes",  bikes_path, class:"dropdown-item" %>
+    <ul>
+      <h5> From <%= @reservation.start_date%> to <%= @reservation.end_date%> </h5>
+      <p> Your bike: <%= @reservation.bike.description %></p>
+      <p> Total price: <%= @reservation.price = ((@reservation.end_date - @reservation.start_date) * @reservation.bike.daily_price).to_i %> € </p>
+    </ul>
 
-<% if policy(@reservation).destroy? %>
-  <div>
-    <%= link_to "Delete", reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  </div>
-<% end %>
+    <%= link_to "List of bikes",  bikes_path, class:"btn btn-flat" %>
+
+    <% if policy(@reservation).destroy? %>
+      <div>
+        <%= link_to "Delete", reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      </div>
+  <% end %>
+</div>
