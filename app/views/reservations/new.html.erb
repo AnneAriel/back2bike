@@ -1,34 +1,36 @@
-
+<div class="back-body">
   <div class="container text-center">
-    <h1>New reservation</h1>
+    <div class="form justify-content-center">
+      <h1>New reservation</h1>
 
-    <%=simple_form_for [@bike, @reservation],
-      html: {
-        data: {
-          controller: 'flatpickr'
-        }
-      } do |f| %>
-      <div class="row justify-content-md-center">
-        <div class="col-8">
-          <%= f.input :start_date, as: :string, input_html: {
-            data: {
-              flatpickr_target: 'startDateInput',
-            }
-          } %>
+      <%=simple_form_for [@bike, @reservation],
+        html: {
+          data: {
+            controller: 'flatpickr'
+          }
+        } do |f| %>
+        <div class="row justify-content-md-center">
+          <div class="col-8">
+            <%= f.input :start_date, as: :string, input_html: {
+              data: {
+                flatpickr_target: 'startDateInput',
+              }
+            } %>
+          </div>
         </div>
-      </div>
-      <div class="row justify-content-md-center">
-        <div class="col-8">
-          <%= f.input :end_date, as: :string, input_html: {
-            data: {
-              flatpickr_target: 'endDateInput'
-            }
-          } %>
+        <div class="row justify-content-md-center">
+          <div class="col-8">
+            <%= f.input :end_date, as: :string, input_html: {
+              data: {
+                flatpickr_target: 'endDateInput'
+              }
+            } %>
+          </div>
         </div>
-      </div>
-      <%#= f.label ? afficher le price%>
-      <%  %>
-      <%= f.submit "Book bike", class: "btn btn-flat" %>
-      <%end%>
+        <%#= f.label ? afficher le price%>
+        <%  %>
+        <%= f.submit "Book bike", class: "btn btn-flat" %>
+        <%end%>
+    </div>
   </div>
-
+</div>

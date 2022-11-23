@@ -1,14 +1,21 @@
-<h1>All reservations</h1>
+<h2>All reservations</h2>
 
 
-<ul>
-  <% @user_reservation.each do |reservation| %>
-    <li>User: <%= reservation.user.name %></li>
-    <li>Bike: <%= reservation.bike.category %></li>
-    <li>Start date: <%= reservation.start_date%></li>
-    <li>End date: <%= reservation.end_date %></li>
-  <%end%>
-</ul>
+<div class="container mt-4 cards">
+  <div class="row">
 
-<%= link_to "Home", root_path %>
+    <% @user_reservation.each do |reservation| %>
+    <div class="col-sm-4">
+      <div class="card rounded shadow mb-4 ml-2" >
+        <h2>Bike: <%= reservation.bike.category %></h2>
+        <h4>User: <%= reservation.user.name %></h4>
+        <h5>Start date: <%= reservation.start_date%></h5>
+        <h5>End date: <%= reservation.end_date %></h5>
+      </div>
+    </div>
+    <%end%>
+  </div>
+</div>
 
+
+<%= link_to "Home", root_path, class:"btn btn-flat" %>
