@@ -11,6 +11,7 @@ class ReservationsController < ApplicationController
     @reservation.bike = @bike
     @reservation.user = current_user
     authorize @reservation
+    @reservation.price = ((@reservation.end_date - @reservation.start_date) * @reservation.bike.daily_price).to_i
     if @reservation.save
       redirect_to bike_reservation_path(@bike, @reservation)
     else
