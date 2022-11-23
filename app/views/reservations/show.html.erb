@@ -10,6 +10,6 @@
 
 <% if policy(@reservation).destroy? %>
   <div>
-    <%= link_to "Delete", reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, style:"text-decoration:none" %>
+    <%= link_to "Delete", reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   </div>
 <% end %>
