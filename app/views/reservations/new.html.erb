@@ -6,6 +6,6 @@
 <%= f.input :start_date %>
 <%= f.input :end_date %>
 <%#= f.label ? afficher le price%>
-<%  %>
+<%#= f.label ((@reservation.end_date - @reservation.start_date) * @reservation.bike.daily_price).to_i :price %>
 <%= f.submit "Book bike", class: "btn btn-primary"%>
 <%end%>
