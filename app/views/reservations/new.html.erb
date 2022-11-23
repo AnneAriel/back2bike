@@ -2,10 +2,24 @@
 
 
 
-<%=simple_form_for [@bike, @reservation] do |f|%>
-<%= f.input :start_date %>
-<%= f.input :end_date %>
-<%#= f.label ? afficher le price%>
-<%  %>
-<%= f.submit "Book bike", class: "btn btn-primary"%>
-<%end%>
+<%=simple_form_for [@bike, @reservation],
+  html: {
+    data: {
+    controller: 'flatpickr'
+    }
+  } do |f| %>
+  <%= f.input :start_date, as: :string, input_html: {
+    data: {
+      flatpickr_target: 'startDateInput',
+    }
+  } %>
+  <%= f.input :end_date, as: :string, input_html: {
+    class: 'd-none',
+    data: {
+      flatpickr_target: 'endDateInput'
+    }
+  } %>
+  <%#= f.label ? afficher le price%>
+  <%  %>
+  <%= f.submit "Book bike", class: "btn btn-primary"%>
+  <%end%>
