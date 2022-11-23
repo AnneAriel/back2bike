@@ -6,11 +6,13 @@
 
     <% @user_reservation.each do |reservation| %>
     <div class="col-sm-4">
-      <div class="card rounded shadow mb-4 ml-2" >
-        <h2>Bike: <%= reservation.bike.category %></h2>
-        <h4>User: <%= reservation.user.name %></h4>
-        <h5>Start date: <%= reservation.start_date%></h5>
-        <h5>End date: <%= reservation.end_date %></h5>
+    <div class = "bike_card">
+        <div class="card rounded shadow mb-4 ml-2" >
+          <h2>Bike: <%= reservation.bike.category %></h2>
+          <h4>User: <%= reservation.user.name %></h4>
+          <h5>Start date: <%= reservation.start_date%></h5>
+          <h5>End date: <%= reservation.end_date %></h5>
+        </div>
       </div>
     </div>
     <%end%>

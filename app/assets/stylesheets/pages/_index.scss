@@ -1,3 +1,26 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.card-body h5 {
+  color: rgb(42, 157, 143);
+}
+
+.title {
+  color : rgb(38, 70, 83);
+  text-align: center;
+}
+
+.btn-flat {
+  display: block;
+  margin: 0 auto;
+  width: 136px;
+}
+
+.map{
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 936px;
+  height: 600px;
+  display: block;
+  margin: 0 auto;
+}

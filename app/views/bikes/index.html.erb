@@ -1,18 +1,18 @@
 <div class="container mt-4 cards">
-  <h1>Our bikes</h1>
+  <h1 class="title"> Our bikes</h1>
   <a class="btn btn-gradient" href="#">Black Friday : Time to book!!!!</a>
 
   <div class="row">
     <% @bikes.each do |bike| %>
       <div class="col-sm-4">
-        <div class="card rounded shadow mb-4 ml-2" >
+        <div class="card rounded-4 shadow mb-4 ml-2" >
           <% if bike.photo.attached? %>
-            <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top" %>
+            <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top rounded-4" %>
           <% end %>
             <div class="card-body">
               <h5 class="card-title"><%= bike.category%></h5>
               <h6><%= bike.address %></h6>
-              <h5 class="card-trip-pricing"><%= bike.daily_price %> €</h5>
+              <h5 class="card-trip-pricing"><%= bike.daily_price %> € / day</h5>
               <%= link_to "See the bike", bike_path(bike)%>
             </div>
         </div>
@@ -26,9 +26,10 @@
   </div>
 
 
-<div class="container">
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class="map">
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
 </div>
