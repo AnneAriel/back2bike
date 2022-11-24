@@ -25,6 +25,16 @@ class BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     @reservation = Reservation.new
     authorize @bike
+
+    @markers =
+    [
+      {
+      lat: @bike.latitude,
+      lng: @bike.longitude,
+      info_window: render_to_string(partial: "info_window", locals: {bike: @bike}),
+      image_url: helpers.asset_url("https://cdn-icons-png.flaticon.com/512/130/130276.png")
+      }
+    ]
   end
 
   def new
