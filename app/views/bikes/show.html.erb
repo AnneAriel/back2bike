@@ -10,6 +10,7 @@
           <%= cl_image_tag @bike.photo.key, crop: :fill, class:"card-img-top rounded-4" %>
         <% end %>
         <div class="card-body">
+        <h4 class="card-title"><%= @bike.name%></h4>
           <h5 class="card-title"><%= @bike.category%></h5>
           <h6><%= @bike.address %></h6>
           <h6 class="card-text" ><small><%= @bike.description %></small></h6>

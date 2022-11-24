@@ -1,8 +1,14 @@
 class BikesController < ApplicationController
 
   def index
-    @bikes = Bike.all
     @bikes = policy_scope(Bike)
+
+    if params[:query].present?
+      @bikes = Bike.search_by_bike_criteria(params[:query])
+    else
+      @bikes = Bike.all
+    end
+
 
     @markers = @bikes.geocoded.map do |bike|
       {
@@ -12,6 +18,7 @@ class BikesController < ApplicationController
         image_url: helpers.asset_url("https://cdn-icons-png.flaticon.com/512/130/130276.png")
       }
     end
+
   end
 
   def show
