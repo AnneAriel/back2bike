@@ -10,9 +10,20 @@ Bike.destroy_all
 User.destroy_all
 
 user1 = User.create!(name: "Cathy", email: "catherinecrozat@gmail.com", password: "toto123")
+photo = URI.open("https://ca.slack-edge.com/T02NE0241-U045TDQ4M43-d011388c1f01-512")
+user1.photo.attach(io: photo, filename: "profil")
+
 user2 = User.create!(name: "Jean Louis", email: "jl@gmail.com", password: "toto123")
+photo = URI.open("https://ca.slack-edge.com/T02NE0241-U045KH4RTU4-9b364aef3d01-512")
+user2.photo.attach(io: photo, filename: "profil")
+
 user3 = User.create!(name: "Nelbi", email: "nelbi@gmail.com", password: "toto123")
+photo = URI.open("https://ca.slack-edge.com/T02NE0241-U045K5VEPU6-6f3e8bfafc04-512")
+user3.photo.attach(io: photo, filename: "profil")
+
 user4 = User.create!(name: "Anne Ariel", email: "anne_ariel@gmail.com", password: "toto123")
+photo = URI.open("https://ca.slack-edge.com/T02NE0241-U045T6WG65S-3016efea1458-512")
+user4.photo.attach(io: photo, filename: "profil")
 
 Bike1 = Bike.create!(name: "Black Tandem", category: "Family", description: "A stylish tandem bike with protective fenders and spring seats. Also consider · Pacific Dualie Adult Tandem Bike, 26-Inch Wheels, 2-Seater, 21.", address: "Villa Gaudelet 75011 Paris", daily_price: 35, user: user1)
 photo = URI.open("https://www.velo-on-line.fr/11201-zoom_default/velo-tandem-due-smart-15.jpg")
