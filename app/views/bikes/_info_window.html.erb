@@ -1,2 +1,10 @@
-<h2><%= bike.category %></h2>
-<p><%= bike.address %></p>
+<div class="card rounded-4  p-3 mb-4 ml-2"  >
+  <%= link_to  bike_path(bike), style:'text-decoration: none;color: black;border-style:none;' do %>
+
+    <% if bike.photo.attached? %>
+      <%= cl_image_tag bike.photo.key, height: 75, width: 100, crop: :fill %>
+    <% end %>
+    <h6><%= bike.category %></h6>
+    <h6><%= bike.address %></h6>
+  <% end%>
+</div>
