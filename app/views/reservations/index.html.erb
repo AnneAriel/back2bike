@@ -12,15 +12,15 @@
           <%= cl_image_tag reservation.bike.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top" %>
         <% end %>
         <div>
+          <h4 style= "text-align: right"><b>Total price: <%= reservation.price %> €</b></h4>
           <h2>Bike: <%= reservation.bike.category %></h2>
-          <h4>User: <%= reservation.user.name %></h4>
-          <h5>Start date: <%= reservation.start_date%></h5>
-          <h5>End date: <%= reservation.end_date %></h5>
-          <p>Total price: <%= reservation.price %> €</p>
+          <h5 style = "font-weight: bold">From: <%= reservation.start_date%> to <%= reservation.end_date %></h5>
         </div>
+        <% if policy(reservation).destroy? %>
+        <div>
+          <%= link_to "Delete", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </div>
+        <% end %>
       </div>
     </div>
     <%end%>
-  </div>
-<%= link_to "Home", root_path, class:"btn btn-flat" %>
-</div>

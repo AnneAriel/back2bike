@@ -4,16 +4,18 @@
 
   <div class="row">
     <% @bikes.each do |bike| %>
-      <div class="col-sm-4">
-        <div class="card rounded-4 shadow mb-4 ml-2" >
-          <% if bike.photo.attached? %>
-            <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top rounded-4" %>
-          <% end %>
+
+        <div class="col-sm-4">
+          <div class="card rounded-4 shadow mb-4 ml-2" >
+            <%= link_to  bike_path(bike) do %>
+              <% if bike.photo.attached? %>
+                <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top rounded-4" %>
+              <% end %>
+            <% end %>
             <div class="card-body">
               <h5 class="card-title"><%= bike.category%></h5>
               <h6><%= bike.address %></h6>
               <h5 class="card-trip-pricing"><%= bike.daily_price %> € / day</h5>
-              <%= link_to "See the bike", bike_path(bike)%>
             </div>
         </div>
       </div>
