@@ -64,10 +64,48 @@
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
+      <div class="form" data-controller="controller">
+        <h5>Special offer Back2bike</h5>
+        <h6><%= @bike.daily_price %> €/ day only !</h6>
+        <h5>Book this bike</h5>
+        <%=simple_form_for [@bike, @reservation],
+            html: {
+              data: {
+                controller: 'flatpickr'
+              }
+            } do |f| %>
+              <div class="row justify-content-md-center">
+                <div class="col-8">
+                  <%= f.input :start_date, as: :string, input_html: {
+                    data: {
+                      flatpickr_target: 'startDateInput',
+                    }
+                  } %>
+                </div>
+              </div>
+              <div class="row justify-content-md-center">
+                <div class="col-8">
+                  <%= f.input :end_date, as: :string, input_html: {
+                    data: {
+                      flatpickr_target: 'endDateInput'
+                    }
+                  } %>
+                </div>
+              </div>
+              <%#= f.label ? afficher le price%>
+              <%  %>
+              <h6><span id="bike-price-per-day"><%= @bike.daily_price %></span> € / day </h6>
+              <h6> Reservation for <span id="total-days">0</span> days </h6>
+              <h6>Total price : <span id="total-price">0</span> € </h6>
+              <%= f.submit "Book", class: "btn btn-flat" %>
+              <%end%>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
   <% if policy(@bike).destroy? %>
     <div>

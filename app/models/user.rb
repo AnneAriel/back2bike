@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :bikes
   has_many :reservations
+  has_one_attached :photo
 
   validates :name, presence: true
 
