@@ -55,6 +55,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "devise"
 gem "pundit"
 gem "geocoder"
+gem "pg_search"
 
 
 group :development, :test do
