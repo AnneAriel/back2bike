@@ -14,8 +14,8 @@ user2 = User.create!(name: "Jean Louis", email: "jl@gmail.com", password: "toto1
 user3 = User.create!(name: "Nelbi", email: "nelbi@gmail.com", password: "toto123")
 user4 = User.create!(name: "Anne Ariel", email: "anne_ariel@gmail.com", password: "toto123")
 
-Bike1 = Bike.create!(category: "Yellow Tandem", description: "A stylish tandem bike with protective fenders and spring seats. Also consider · Pacific Dualie Adult Tandem Bike, 26-Inch Wheels, 2-Seater, 21.", address: "Villa Gaudelet 75012 Paris", daily_price: 35, user: user1)
-photo = URI.open("https://m.media-amazon.com/images/I/81MtZKYNHlL._AC_SX679_.jpg")
+Bike1 = Bike.create!(category: "Black Tandem", description: "A stylish tandem bike with protective fenders and spring seats. Also consider · Pacific Dualie Adult Tandem Bike, 26-Inch Wheels, 2-Seater, 21.", address: "Villa Gaudelet 75012 Paris", daily_price: 35, user: user1)
+photo = URI.open("https://www.velo-on-line.fr/11201-zoom_default/velo-tandem-due-smart-15.jpg")
 Bike1.photo.attach(io: photo, filename: "velo")
 
 Bike2 = Bike.create!(category: "Electric cargo bike", description: "The Blix Packa Genie is a durable, safety-oriented cargo e-bike that’s ready to lug up to a 400 lb payload. Not only did the Packa impress us with its design. The Packa Genie just feels like a good value as it’s stocked with a 7-speed Shimano Acera drivetrain, has two 48V, 12.8Ah (614Wh) batteries, and uses a powerful 750W motor.", address: "Boulevard Pasteur 75014 Paris", daily_price: 10, user: user4)
