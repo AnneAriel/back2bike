@@ -21,7 +21,7 @@
   </div>
   <div class="col-lg-2"></div>
     <div class="col-lg-4 col-12">
-      <div class="form">
+      <div class="form" data-controller="controller">
         <h5>Special offer Back2bike</h5>
         <h6><%= @bike.daily_price %> €/ day only !</h6>
         <h5>Book this bike</h5>
@@ -51,12 +51,18 @@
               </div>
               <%#= f.label ? afficher le price%>
               <%  %>
+              <h6><span id="bike-price-per-day"><%= @bike.daily_price %></span> € / day </h6>
+              <h6> Reservation for <span id="total-days">0</span> days </h6>
+              <h6>Total price : <span id="total-price">0</span> € </h6>
               <%= f.submit "Book", class: "btn btn-flat" %>
               <%end%>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
   <% if policy(@bike).destroy? %>
     <div>
