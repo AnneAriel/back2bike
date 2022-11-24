@@ -1,7 +1,13 @@
 // Specific CSS for your home-page
-
+.body {
+  min-height: 100vh;
+}
 
 .title {
   color:white;
   font-family: 'Spinnaker', sans-serif;
+}
+
+.slogan{
+  text-align: center;
 }
