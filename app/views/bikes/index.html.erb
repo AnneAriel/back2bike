@@ -1,15 +1,19 @@
 
-<div class="container" style= "margin-top:20px">
-<%= form_with url: bikes_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a bike"
-  %>
-  <%= submit_tag "Find", class: "btn btn-flat" %>
-<% end %>
-</div>
+<br>
+<br>
+<br>
+<br>
 
+<div class="container" style= "margin-top:20px">
+  <%= form_with url: bikes_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a bike"
+    %>
+    <%= submit_tag "Find", class: "btn btn-flat" %>
+  <% end %>
+</div>
 
 <div class="container mt-4 cards">
   <a class="btn btn-gradient" href="#">Black Friday : Time to book!!!!</a>
@@ -51,5 +55,14 @@
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
       </div>
-    </div>
-  </div>
+        <div class="col-12 col-lg-4">
+          <div class="map-sticky">
+            <div style="width: 100%; height: 424px;"
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+          </div>
+      </div>
+   </div>
+</div>
