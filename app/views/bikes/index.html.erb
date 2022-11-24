@@ -1,3 +1,16 @@
+
+<div class="container" style= "margin-top:20px">
+<%= form_with url: bikes_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a bike"
+  %>
+  <%= submit_tag "Find", class: "btn btn-flat" %>
+<% end %>
+</div>
+
+
 <div class="container mt-4 cards">
   <a class="btn btn-gradient" href="#">Black Friday : Time to book!!!!</a>
 
@@ -15,6 +28,7 @@
                 <% end %>
               <% end %>
               <div class="card-body">
+                <h4 class="card-title"><%= bike.name%></h4>
                 <h5 class="card-title"><%= bike.category%></h5>
                 <h6><%= bike.address %></h6>
                 <h5 class="card-trip-pricing"><%= bike.daily_price %> € / day</h5>
