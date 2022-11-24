@@ -2,7 +2,6 @@
   max-width: 200px;
   border-radius: 5px;
   box-shadow: 0px 4px 9px 5px rgba(0,0,0,0.55);
-
 }
 
 .mapboxgl-popup-content {
@@ -12,4 +11,9 @@
 
 .mapboxgl-popup-content a:focus-visible {
   outline: none;
+  }
+  
+.map-sticky {
+ position: sticky;
+ top: 100px;
 }
