@@ -2,6 +2,7 @@
 
   <h1><%= @bike.category %></h1>
 
+
   <div class="flex-container">
     <div class="flex-item flex-left">
       <div class="card rounded-4 border-0 shadow mb-4 ml-2">
@@ -24,6 +25,7 @@
           <h6><%= @bike.daily_price %> €/ day only !</h6>
           <h5>Book this bike</h5>
           <%=simple_form_for [@bike, @reservation],
+
             html: {
               data: {
                 controller: 'flatpickr'
@@ -58,12 +60,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-  <% if policy(@bike).destroy? %>
-    <div>
-      <%= link_to "Delete this bike", bike_path(@bike),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, style:"text-decoration:none"%>
-    </div>
-  <% end %>

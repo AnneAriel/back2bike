@@ -19,14 +19,9 @@
   </div>
 </div>
    <%= link_to "List of bikes",  bikes_path, class:"btn btn-flat" %>
-
     <% if policy(@reservation).destroy? %>
       <div>
         <%= link_to "Delete", reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
       </div>
   <% end %>
   </div>
-
-
-
-</div>
