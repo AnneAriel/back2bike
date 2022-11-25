@@ -1,12 +1,21 @@
-<h1>New bike</h1>
 
-<%= simple_form_for(@bike) do |f| %>
-  <%= f.input :name %>
-  <%= f.label :category %>
-  <%= f.select :category, ["VTT","Electric","Mountain","BMX","Family","Atypical", "Kids"] %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.input :daily_price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+
+<div class="container d-flex justify-content-center">
+  <div class="col-lg-6 col-12">
+    <div class="card rounded-4 border-0 shadow mb-4 ml-2 p-4">
+    <h1 class="mb-4">New bike</h1>
+      <%= simple_form_for(@bike) do |f| %>
+        <%= f.input :name %>
+        <%= f.label :category %>
+        <p></p>
+        <%= f.select :category, ["VTT","Electric","Mountain","BMX","Family","Atypical", "Kids"] %>
+        <p></p>
+        <%= f.input :description %>
+        <%= f.input :address %>
+        <%= f.input :daily_price %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
