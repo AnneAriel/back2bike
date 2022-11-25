@@ -18,7 +18,7 @@
       <div class="col-12 col-lg-8">
         <div class="row">
           <% @bikes.each do |bike| %>
-            <div class="col-sm-6">
+            <div class="col-sm-6 bicard">
               <%= link_to  bike_path(bike), style:"text-decoration:none;color:black;" do %>
               <div class="card rounded-4 shadow mb-4 ml-2" >
                   <% if bike.photo.attached? %>
