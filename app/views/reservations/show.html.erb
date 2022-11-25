@@ -10,18 +10,20 @@
       <% if @reservation.bike.photo.attached? %>
         <%= cl_image_tag @reservation.bike.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top" %>
       <% end %>
-      <h3 style= "text-align: right"><b>Total price: <%= @reservation.price %> €</b></h3>
+      <h3 style= "text-align: right"><b><%= @reservation.price %> €</b></h3>
       <h5 style = "font-weight: bold">From: <%= @reservation.start_date%> to <%= @reservation.end_date %></h5>
-      <h3>Your bike: <%= @reservation.bike.category %></h3>
+      <h4 class="card-title"><%= @reservation.bike.name%></h4>
+      <h5 class="card-title"><%= @reservation.bike.category%></h5>
+      <h6><%= @reservation.bike.address %></h6>
       <p><%= @reservation.bike.description %></p>
-
+      <% if policy(@reservation).destroy? %>
+        <div>
+          <%= link_to "Delete", reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
    <%= link_to "List of bikes",  bikes_path, class:"btn btn-flat" %>
-    <% if policy(@reservation).destroy? %>
-      <div>
-        <%= link_to "Delete", reservation_path(@reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-      </div>
-  <% end %>
+
   </div>
