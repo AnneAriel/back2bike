@@ -1,6 +1,5 @@
-.flex-item-c {
+.flex-item {
   display: flex;
-  align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
   width: 60%;
@@ -25,6 +24,12 @@
   border: 3px solid;
   border-color: #adb5bd;
   box-shadow: 5px 6px 3px 0px rgba(75, 74, 74, 0.75);
+}
+
+.flex-map {
+  flex: 50%;
+  padding: 40px;
+
 }
 
 .pic {
