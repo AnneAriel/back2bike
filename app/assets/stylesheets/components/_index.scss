@@ -18,3 +18,23 @@
   background-image: url(https://images.unsplash.com/photo-1571292098320-997aa03a5d19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80);
   background-size: contain;
   }
+
+
+#bike {
+  width: 20px;
+  height: 20px;
+}
+
+.pika2 {
+  position: absolute;
+  bottom: auto;
+  width: 20%;
+  margin-top: 230px;
+  animation: pika-pika 4s normal infinite ease-in-out;
+}
+
+@keyframes pika-pika {
+  from{left:0px}
+  to{left:100%}
+}
+
