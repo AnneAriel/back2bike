@@ -21,8 +21,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
             <% if user_signed_in? %>
-            <%= cl_image_tag current_user.photo.key, class:"avatar dropdown-toggle", id: "navbarDropdown", 'data-bs-toggle': 'dropdown', 'aria-haspopup': true, 'aria-expanded': false %>
-              <%#img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=<%= cl_image_tag current_user.photo.key, class:"avatar "%>
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class:"avatar dropdown-toggle", id: "navbarDropdown", 'data-bs-toggle': 'dropdown', 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn-icons-png.flaticon.com/512/130/130276.png" />
+            <% end %>
+
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#"></a>
                 <%= link_to "Find a bike",  bikes_path, class:"dropdown-item" %>

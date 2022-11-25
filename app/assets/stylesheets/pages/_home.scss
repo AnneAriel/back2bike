@@ -11,3 +11,16 @@
 .slogan{
   text-align: center;
 }
+
+.footer {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
