@@ -24,7 +24,7 @@
                   <% if bike.photo.attached? %>
                     <%= cl_image_tag bike.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top rounded-4" %>
                   <% end %>
-              <% end %>
+
               <div class="card-body">
                   <h4 class="card-title"><%= bike.name%></h4>
                   <h5 class="card-title"><%= bike.category%></h5>
@@ -32,7 +32,9 @@
                   <h5 class="card-trip-pricing"><%= bike.daily_price %> € / day</h5>
                 </div>
               </div>
+              <% end %>
             </div>
+
           <% end %>
         </div>
       </div>
