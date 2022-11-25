@@ -24,6 +24,10 @@
   margin: 0 auto;
 }
 
+.bicard:hover {
+  padding: unset;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 .background {
   background-image: url(https://images.unsplash.com/photo-1578922348103-46c3a7ebdd86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
   background-size: contain;
@@ -53,7 +57,6 @@
       display: flex;
       align-items: center;
     }
-}
 
 .resas {
   border-bottom: solid 3px rgb(45, 44, 44);
