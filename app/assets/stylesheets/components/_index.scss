@@ -12,4 +12,11 @@
 @import "back_body";
 @import "form";
 @import "cards";
-@import "flexbox"
+@import "flexbox";
+
+.background {
+background-image: url(https://images.unsplash.com/photo-1523357585206-175e971f2ad9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhY2tncm91bmQlMjBiaWtlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+background-size: contain;
+}
+
+
