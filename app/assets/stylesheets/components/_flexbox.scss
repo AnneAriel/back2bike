@@ -1,4 +1,23 @@
-.flexbox {
+.flex-item {
   display: flex;
-  justify-content: space-evenly;
 }
+
+.flex-left {
+margin-top: 40px;
+width: 400px;
+height: auto;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-container  {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-right {
+  margin-top: 40px;
+  }
