@@ -8,7 +8,7 @@ class Bike < ApplicationRecord
   include PgSearch::Model
 
 pg_search_scope :search_by_bike_criteria,
-  against: [ :category, :description, :address ],
+  against: [ :category, :description, :address, :name ],
   using: {
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
